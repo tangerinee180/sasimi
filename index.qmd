@@ -14,6 +14,8 @@ import webbrowser
 
 data = pd.read_csv("houseprice-with-lonlat.csv")
 
+df = df.iloc[:, 1:]
+
 # 집 가격 범위랑 그에 따른 색 list 만들기 
 price_ranges = [100000, 200000, 300000, 400000, 500000, 600000, 700000, float('inf')]
 colors = ['blue', 'green', 'orange', 'red', 'purple', 'darkred', 'black', 'grey']
