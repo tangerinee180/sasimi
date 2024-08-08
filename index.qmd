@@ -25,7 +25,7 @@ def get_color(price):
     for i, range_upper in enumerate(price_ranges):
         if price <= range_upper:
             return colors[i]
-        
+
 map_center = [data['Latitude'].mean(), data['Longitude'].mean()]
 
 my_map = folium.Map(location=map_center, zoom_start=12,tiles = "cartodbpositron")
@@ -36,11 +36,11 @@ for price, lat, lon in zip(data['Sale_Price'], data['Latitude'], data['Longitude
         location=[lat, lon],
         radius=20,
         color=color,
-        popup=f"Price: ${price}"
+        popup=f"Price: ${price}",
         fill=True,
         fill_opacity=0.6,
     ).add_to(my_map)
-    
+
 
 corrected_map_path = 'house_price_corrected_colored_map.html'
 my_map.save(corrected_map_path)
