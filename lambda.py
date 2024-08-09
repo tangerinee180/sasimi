@@ -180,7 +180,3 @@ folium.GeoJson(
 
 # 지도 저장
 my_map.save('ames_neighborhoods.html')
-
-
-
-
